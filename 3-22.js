@@ -4,15 +4,15 @@ let user = {
     articles: [{ name: "JS" }, { name: "React" }, { name: "Vue" }, { name: "Cource" }],
   };
   
-  const logUserArticles = (user) => {
+  const logUsersArticles = (user) => {
     let userArticles = user.articles;
 
-    userArticles.forEach((article,index) => {
-        console.log(`Article ${index+1} name is ${article.name}`);
+    userArticles.forEach((article, index) => {
+        console.log(`Article ${index + 1} name is ${article.name}`);
     });
   };
     
-  logUserArticles(user);
+  logUsersArticles(user);
 
   user.articles = user.articles.map((article) => {
     article.text = "default text";
@@ -21,8 +21,8 @@ let user = {
 
   console.log(user);
 
-  let articleName = user.articles.reduse((prev, curr) => {
-    return prev + "" + curr.name;
+  let articlesName = user.articles.reduce((prev, curr) => {
+    return prev + " " + curr.name;
   }, "");
 
-  console.log(articleName);
+  console.log(articlesName);
